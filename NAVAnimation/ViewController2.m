@@ -240,7 +240,14 @@
 
 - (void)back:(UIButton *)sender
 {
+    self.coverImageView.hidden = YES;
     self.detailTableView.hidden = YES;
+    
+    if (bottomMaskView) {
+        [bottomMaskView removeFromSuperview];
+        bottomMaskView = nil;
+    }
+    
     [super back:sender];
 }
 

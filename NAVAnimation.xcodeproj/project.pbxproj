@@ -24,6 +24,7 @@
 		8CB07F511EE69FF4005A430E /* DDAnimationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB07F501EE69FF4005A430E /* DDAnimationObject.m */; };
 		8CB35E1E1EE7F3F0004C9F1B /* TopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB35E1C1EE7F3F0004C9F1B /* TopTableViewCell.m */; };
 		8CB35E1F1EE7F3F0004C9F1B /* TopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8CB35E1D1EE7F3F0004C9F1B /* TopTableViewCell.xib */; };
+		8CB35E251EE80360004C9F1B /* 未命名.gif in Resources */ = {isa = PBXBuildFile; fileRef = 8CB35E241EE80360004C9F1B /* 未命名.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		8CB35E1B1EE7F3F0004C9F1B /* TopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopTableViewCell.h; sourceTree = "<group>"; };
 		8CB35E1C1EE7F3F0004C9F1B /* TopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopTableViewCell.m; sourceTree = "<group>"; };
 		8CB35E1D1EE7F3F0004C9F1B /* TopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopTableViewCell.xib; sourceTree = "<group>"; };
+		8CB35E241EE80360004C9F1B /* 未命名.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "未命名.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 				8C4356501EE7B91B00C156CF /* ViewController2.xib */,
 				8CB07F251EE68C07005A430E /* Main.storyboard */,
 				8C4356581EE7DCAB00C156CF /* 222@2x.jpg */,
+				8CB35E241EE80360004C9F1B /* 未命名.gif */,
 				8CB07F281EE68C07005A430E /* Assets.xcassets */,
 				8CB07F2A1EE68C07005A430E /* LaunchScreen.storyboard */,
 				8CB07F2D1EE68C07005A430E /* Info.plist */,
@@ -301,6 +304,7 @@
 				8CB07F291EE68C07005A430E /* Assets.xcassets in Resources */,
 				8CB07F271EE68C07005A430E /* Main.storyboard in Resources */,
 				8C4356571EE7DC2B00C156CF /* AnimationTableViewCell.xib in Resources */,
+				8CB35E251EE80360004C9F1B /* 未命名.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
