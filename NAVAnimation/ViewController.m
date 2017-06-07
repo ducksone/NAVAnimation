@@ -78,16 +78,10 @@
     
     AnimationTableViewCell *animationCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    //TODO 计算位置
+    //计算位置
     CGRect rectInTableView = [tableView rectForRowAtIndexPath:indexPath];
-    
     CGRect rectInSuperview = [tableView convertRect:rectInTableView toView:[tableView superview]];
-//
-////    NSLog(@"cell在tableview中的位置:%@",NSStringFromCGRect(rectInTableView));
-//    NSLog(@"cell在屏幕中的位置:%@",NSStringFromCGRect(rectInSuperview));
-    
     CGRect cc = CGRectMake(rectInSuperview.origin.x, rectInSuperview.origin.y + 50, rectInSuperview.size.width, rectInSuperview.size.height - 50);
-//    NSLog(@"____imageView:%@",NSStringFromCGRect(cc));
     
     [DDAnimationObject shareDDAnimation].middleImage = animationCell.showImageView.image;
     [DDAnimationObject shareDDAnimation].animationRect = cc;
@@ -97,14 +91,6 @@
     [self.navigationController pushViewController:vc2 animated:YES];
     
 }
-
-
-
-//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-//{
-//
-//    
-//}
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController
                                             animationControllerForOperation:(UINavigationControllerOperation)operation
@@ -119,33 +105,6 @@
     return [DDAnimationObject shareDDAnimation];
 }
 
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-//{
-//    if ([segue.identifier isEqualToString:@"pushSeg"]) {
-//        SecondViewController *toVC = (SecondViewController *)segue.destinationViewController;
-//    }
-//}
-
-- (UIImage *)ddScreenShot:(UIView *) contentView
-{
-    CGRect rect = contentView.frame;
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    [contentView.layer renderInContext:context];
-    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    float originX = 90;
-    float originY = 50 + 20;
-    float width = [[UIScreen mainScreen] bounds].size.width - 90 * 2;
-    float height = 100;
-    //你需要的区域起点,宽,高;
-    
-    CGRect rect1 = CGRectMake(originX , originY , width , height);
-    UIImage *image = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([img CGImage], rect1)];
-    
-    return image;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

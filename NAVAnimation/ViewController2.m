@@ -100,7 +100,7 @@
     bottomMaskView.backgroundColor = [UIColor whiteColor];
     
     CGRect stateViewRect = CGRectMake(CGRectGetMidX(bottomMaskView.frame), CGRectGetMidY(bottomMaskView.frame), 30, 30);
-    NSLog(@"___stateViewRect:%@",NSStringFromCGRect(stateViewRect));
+//    NSLog(@"___stateViewRect:%@",NSStringFromCGRect(stateViewRect));
     stateIndicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((bottomMaskView.frame.size.width - 30) / 2, (bottomMaskView.frame.size.height - 30) / 2, 30, 30)];
     stateIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [stateIndicatorView startAnimating];

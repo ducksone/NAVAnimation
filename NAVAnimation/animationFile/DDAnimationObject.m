@@ -40,7 +40,7 @@
 
 //跳转动画的执行时间
 -(NSTimeInterval)transitionDuration:(id < UIViewControllerContextTransitioning >)transitionContext;{
-    return 0.5;
+    return ANIMATION_TIME_PUSH;
 }
 
 
@@ -50,7 +50,7 @@
     
     UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    NSTimeInterval duration = [self transitionDuration:transitionContext];
+//    NSTimeInterval duration = [self transitionDuration:transitionContext];
     UIView* containerView = [transitionContext containerView];
     
     switch (self.type) {
@@ -62,7 +62,6 @@
             
             CGRect frame = CGRectMake(0,0,[UIScreen mainScreen].bounds.size.width,[UIScreen mainScreen].bounds.size.height);
             toViewController.view.frame = frame;
-            NSLog(@"push:%@",NSStringFromCGRect(frame));
             
             __block UIView *toMaskView = [[UIView alloc] initWithFrame:frame];
             [toViewController.view addSubview:toMaskView];
@@ -74,26 +73,12 @@
             
             __block UIImageView *middleImageView = [[UIImageView alloc] initWithFrame:middleRect];
             middleImageView.image = self.middleImage;
-//            middleImageView.backgroundColor = [UIColor brownColor];
             [toMaskView addSubview:middleImageView];
             
             __block UIImageView *bottomImageView = [[UIImageView alloc] initWithFrame:bottomRect];
             bottomImageView.image = self.bottomImage;
             [toMaskView addSubview:bottomImageView];
             
-            
-//            CABasicAnimation *positionAnima = [CABasicAnimation animationWithKeyPath:@"position.y"];
-//            positionAnima.duration = 0.8;
-//            positionAnima.fromValue = @(topImageView.center.y);
-//            positionAnima.toValue = @(-topRect.size.height);
-//            positionAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-//            positionAnima.repeatCount = HUGE_VALF;
-//            positionAnima.repeatDuration = 2;
-//            positionAnima.removedOnCompletion = NO;
-//            positionAnima.delegate = self;
-//            positionAnima.fillMode = kCAFillModeForwards;
-//            
-//            [topImageView.layer addAnimation:positionAnima forKey:@"AnimationMoveY"];
             
             topImageView.frame = topRect;
             middleImageView.frame = middleRect;
@@ -114,18 +99,6 @@
                 [transitionContext completeTransition:YES];
             }];
             
-            /*
-            toViewController.view.frame= frame;
-            [containerView addSubview:toViewController.view];
-            toViewController.view.alpha=0.0;
-            [UIView animateWithDuration:duration
-                            animations:^{
-                                toViewController.view.alpha=1.0;
-                            } completion:^(BOOL finished) {
-                                [fromViewController.view removeFromSuperview];
-                                [transitionContext completeTransition:YES];
-                            }];
-             */
         }
             break;
             
@@ -147,7 +120,6 @@
             
             __block UIImageView *middleImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, middleRect.size.width, middleRect.size.height)];
             middleImageView.image = self.middleImage;
-            //            middleImageView.backgroundColor = [UIColor brownColor];
             [toMaskView addSubview:middleImageView];
             
             __block UIImageView *bottomImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, ANIMATION_HEIGHT, bottomRect.size.width, bottomRect.size.height)];
@@ -157,8 +129,6 @@
             
             [UIView animateWithDuration:ANIMATION_TIME_POP
                             animations:^{
-//                                fromViewController.view.frame=CGRectMake(0, frame.origin.y+ [UIScreen mainScreen].bounds.size.height, frame.size.width, frame.size.height);
-                                
                                 topImageView.frame = topRect;
                                 middleImageView.frame = middleRect;
                                 bottomImageView.frame = bottomRect;

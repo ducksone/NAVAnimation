@@ -48,7 +48,7 @@ typedef void(^DDAnimationStarPush)(UIViewController *vc);
 - (void)animationPushComplete:(DDAnimationPushComplete) block;
 - (void)animationStarPush:(DDAnimationStarPush) block;
 
-/*以下属性及方法 暂时暴露 做测试*/
+
 - (void)starShot:(UIViewController *) vc;
 
 
